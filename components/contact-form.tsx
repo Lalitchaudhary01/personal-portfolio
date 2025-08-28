@@ -50,7 +50,7 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Suraj Jha" {...field} />
+                <Input placeholder="Lalit chaudhary" {...field} />
               </FormControl>
 
               <FormMessage />

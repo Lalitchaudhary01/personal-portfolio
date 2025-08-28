@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Card } from "../ui/card";
-// import ContactForm from "../contact-form";
 import Image from "next/image";
+import ContactForm from "../contact-form";
+
 const Contact = () => {
   return (
     <section className="container mx-auto px-4 py-20">
@@ -15,10 +16,10 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-6">
-            Let's <span className="text-primary">Connect</span>
+            Let&apos;s <span className="text-primary">Connect</span>
           </h2>
           <p className="text-muted-foreground mb-8">
-            I'm always open to discussing new projects, creative ideas, or
+            I&apos;m always open to discussing new projects, creative ideas, or
             opportunities to be part of your visions.
           </p>
           <div className="flex gap-4 mb-8">
@@ -43,14 +44,14 @@ const Contact = () => {
               </a>
             </Button>
             <Button variant={"outline"} size={"icon"} asChild>
-              <a href="mailto:work.lalitchaudhary.com" target="_blank">
+              <a href="mailto:work.lalitchaudhary@gmail.com" target="_blank">
                 <Mail className="w-5 h-5" />
               </a>
             </Button>
-            {/* whatsaap button */}
+            {/* WhatsApp button */}
             <Button variant={"outline"} size={"icon"} asChild>
               <a
-                href="https://wa.me/917992000000"
+                href="https://wa.me/918445646300"
                 target="_blank"
                 rel="noopener"
                 title="Chat on WhatsApp"
@@ -59,7 +60,9 @@ const Contact = () => {
               </a>
             </Button>
           </div>
-          <Card className="px-6 py-6">{/* <ContactForm /> */}</Card>
+          <Card className="px-6 py-6">
+            <ContactForm />
+          </Card>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
