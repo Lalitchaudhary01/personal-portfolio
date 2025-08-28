@@ -3,8 +3,8 @@ import GithubStats from "@/components/github-stats";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
-import Skill from "@/components/sections/Skill";
 import Skills from "@/components/sections/Skills";
+import WallOfLove from "@/components/sections/Testinomials";
 import Testimonials from "@/components/sections/Testinomials";
 
 import { motion } from "framer-motion";
@@ -14,8 +14,8 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Hero />
       <Skills />
-      <Skill />
-      <Testimonials />
+
+      <WallOfLove />
       <Projects />
       {/* Github Stats Section */}
 

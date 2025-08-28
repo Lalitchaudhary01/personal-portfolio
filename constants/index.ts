@@ -1,5 +1,23 @@
 export const technologies = [
   {
+    name: "HTML5",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS3",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "JavaScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "TypeScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+
+  // Frontend Frameworks & UI
+  {
     name: "React",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
@@ -8,13 +26,47 @@ export const technologies = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
   },
   {
-    name: "TypeScript",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    name: "Tailwind CSS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
   },
+  {
+    name: "shadcn/ui",
+    logo: "https://avatars.githubusercontent.com/u/139895814?s=200&v=4",
+  },
+  {
+    name: "Acernity UI",
+    logo: "https://avatars.githubusercontent.com/u/152333586?s=200&v=4",
+  },
+  {
+    name: "Magic UI",
+    logo: "https://avatars.githubusercontent.com/u/137671836?s=200&v=4",
+  },
+
+  // State & Data
+  {
+    name: "Redux",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+  },
+  {
+    name: "GraphQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+  },
+
+  // Backend
   {
     name: "Node.js",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
   },
+  {
+    name: "Express.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    name: "Prisma",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+  },
+
+  // Databases & Auth
   {
     name: "PostgreSQL",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
@@ -24,20 +76,32 @@ export const technologies = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
   },
   {
+    name: "Supabase",
+    logo: "https://avatars.githubusercontent.com/u/54469796?s=200&v=4",
+  },
+  {
+    name: "NextAuth.js",
+    logo: "https://avatars.githubusercontent.com/u/65625612?s=200&v=4",
+  },
+
+  // DevOps & Deployment
+  {
     name: "Docker",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   },
   {
+    name: "AWS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+  },
+  {
+    name: "Vercel",
+    logo: "https://assets.vercel.com/image/upload/v1662130559/front/favicon/vercel/180x180.png",
+  },
+
+  // Tools
+  {
     name: "Git",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  {
-    name: "Redux",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-  },
-  {
-    name: "GraphQL",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
   },
 ];
 
