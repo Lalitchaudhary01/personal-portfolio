@@ -5,9 +5,31 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
 
+// TypeScript interface for the GraphQL response
+interface ContributionDay {
+  contributionCount: number;
+  date: string;
+}
+
+interface ContributionWeek {
+  contributionDays: ContributionDay[];
+}
+
+interface ContributionCalendar {
+  totalContributions: number;
+  weeks: ContributionWeek[];
+}
+
+interface GithubResponse {
+  user: {
+    contributionsCollection: {
+      contributionCalendar: ContributionCalendar;
+    };
+  };
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-
   const username = searchParams.get("username");
 
   if (!username) {
@@ -19,32 +41,30 @@ export async function GET(request: NextRequest) {
 
   try {
     const query = `
-        query($username: String!) {
-          user(login: $username) {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-                weeks {
-                  contributionDays {
-                    contributionCount
-                    date
-                  }
+      query($username: String!) {
+        user(login: $username) {
+          contributionsCollection {
+            contributionCalendar {
+              totalContributions
+              weeks {
+                contributionDays {
+                  contributionCount
+                  date
                 }
               }
             }
           }
         }
-      `;
+      }
+    `;
 
-    const response = await octokit.graphql(query, { username });
-    //   @ts-ignore
+    // Tell TypeScript what response shape to expect
+    const response = await octokit.graphql<GithubResponse>(query, { username });
+
     const calendar = response.user.contributionsCollection.contributionCalendar;
 
-    //   Flatten the weeks array to get all contribution days
-
-    // @ts-ignore
+    // Flatten the weeks array to get all contribution days
     const contributions = calendar.weeks.flatMap((week) =>
-      // @ts-ignore
       week.contributionDays.map((day) => ({
         count: day.contributionCount,
         date: day.date,
