@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { Download, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -101,10 +102,10 @@ const Header = () => {
               {/* ✅ Mobile menu me bhi toggle */}
               <ThemeToggleButton />
 
-              <Button variant={"default"} size={"sm"} className="gap-2">
+              <RainbowButton>
                 <Download className="w-4 h-4" />
-                Resume
-              </Button>
+                Resume{" "}
+              </RainbowButton>
             </nav>
           </motion.div>
         )}
