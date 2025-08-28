@@ -4,7 +4,6 @@ import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
-import WallOfLove from "@/components/sections/Testinomials";
 import Testimonials from "@/components/sections/Testinomials";
 
 import { motion } from "framer-motion";
@@ -14,8 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Hero />
       <Skills />
-
-      <WallOfLove />
+      <Testimonials />
       <Projects />
       {/* Github Stats Section */}
 
@@ -28,7 +26,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <GithubStats username="Aestheticsuraj234" />
+          <GithubStats username="LalitChaudhary01" />
         </motion.div>
       </section>
       <Contact />

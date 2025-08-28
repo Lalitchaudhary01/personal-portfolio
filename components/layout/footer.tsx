@@ -20,7 +20,7 @@ export function Footer() {
             <div className="flex gap-4">
               <Button variant="outline" size="icon" asChild>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/LalitChaudhary01"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -29,7 +29,7 @@ export function Footer() {
               </Button>
               <Button variant="outline" size="icon" asChild>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/lalit-chaudhary-1a816a21b/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -37,7 +37,7 @@ export function Footer() {
                 </a>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <a href="mailto:john@example.com">
+                <a href="mailto:work.lalitchaudhary@gmail.com">
                   <Mail className="w-4 h-4" />
                 </a>
               </Button>
@@ -96,10 +96,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+918445646300"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  +1 (234) 567-890
+                  +91 8445646300
                 </a>
               </li>
             </ul>

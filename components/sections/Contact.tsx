@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Card } from "../ui/card";
 // import ContactForm from "../contact-form";
 import Image from "next/image";
@@ -23,18 +23,39 @@ const Contact = () => {
           </p>
           <div className="flex gap-4 mb-8">
             <Button variant={"outline"} size={"icon"} asChild>
-              {/* <a href="https://github.com/Aestheticsuraj234" target="_blank">
+              <a
+                href="https://github.com/LalitChaudhary01"
+                target="_blank"
+                rel="noopener"
+                title="Visit GitHub profile"
+              >
                 <Github className="w-5 h-5" />
-              </a> */}
+              </a>
             </Button>
             <Button variant={"outline"} size={"icon"} asChild>
-              <a href="#" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/lalit-chaudhary-1a816a21b/"
+                target="_blank"
+                rel="noopener"
+                title="Visit LinkedIn profile"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
             </Button>
             <Button variant={"outline"} size={"icon"} asChild>
-              <a href="mailto:josh@example.com" target="_blank">
+              <a href="mailto:work.lalitchaudhary.com" target="_blank">
                 <Mail className="w-5 h-5" />
+              </a>
+            </Button>
+            {/* whatsaap button */}
+            <Button variant={"outline"} size={"icon"} asChild>
+              <a
+                href="https://wa.me/917992000000"
+                target="_blank"
+                rel="noopener"
+                title="Chat on WhatsApp"
+              >
+                <Phone className="w-5 h-5" />
               </a>
             </Button>
           </div>
