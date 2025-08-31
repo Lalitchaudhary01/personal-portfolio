@@ -4,6 +4,13 @@ import { technologies } from "@/constants";
 import { Card } from "../ui/card";
 import Image from "next/image";
 
+// Explicit types for listeners
+type CardListener = {
+  card: HTMLDivElement;
+  enter: () => void;
+  leave: () => void;
+};
+
 const Skills = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
@@ -11,7 +18,7 @@ const Skills = () => {
 
   useEffect(() => {
     let ctx: gsap.Context | null = null;
-    const listeners: { card: HTMLDivElement; enter: any; leave: any }[] = [];
+    const listeners: CardListener[] = [];
 
     const loadGsap = async () => {
       const gsapModule = await import("gsap");
@@ -128,6 +135,7 @@ const Skills = () => {
     };
   }, []);
 
+  // Properly typed ref collector
   const addToRefs = (el: HTMLDivElement | null) => {
     if (el && !cardsRef.current.includes(el)) {
       cardsRef.current.push(el);
@@ -162,10 +170,10 @@ const Skills = () => {
             key={index}
             ref={addToRefs}
             className="group p-4 flex flex-col items-center justify-center 
-                   hover:border-primary transition-all duration-300 
-                   bg-gradient-to-br from-background to-muted/50
-                   backdrop-blur-sm border-2 border-transparent
-                   cursor-pointer transform-gpu"
+                     hover:border-primary transition-all duration-300 
+                     bg-gradient-to-br from-background to-muted/50
+                     backdrop-blur-sm border-2 border-transparent
+                     cursor-pointer transform-gpu"
             style={{ transformStyle: "preserve-3d" }}
           >
             <div className="relative mb-2 transform group-hover:scale-110 transition-transform duration-300">
