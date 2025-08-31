@@ -172,7 +172,7 @@ const GithubStats = ({ username }: Props) => {
   const currentStreak = stats.contributions
     .slice()
     .reverse()
-    .reduce((streak, day, index, _array) => {
+    .reduce((streak, day, index) => {
       if (index === 0 && day.count === 0) return 0;
       if (day.count > 0) return streak + 1;
       return streak;
