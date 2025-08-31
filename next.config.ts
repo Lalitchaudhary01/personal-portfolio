@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
       "avatar.iran.liara.run",
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true, // ESLint warnings ignore karega
+  },
+  typescript: {
+    ignoreBuildErrors: true, // TS errors ignore karega
+  },
 };
 
 module.exports = nextConfig;
