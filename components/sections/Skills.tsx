@@ -11,6 +11,7 @@ const Skills = () => {
 
   useEffect(() => {
     let ctx: gsap.Context | null = null;
+    const listeners: { card: HTMLDivElement; enter: any; leave: any }[] = [];
 
     const loadGsap = async () => {
       const gsapModule = await import("gsap");
@@ -106,11 +107,12 @@ const Skills = () => {
           card.addEventListener("mouseenter", handleMouseEnter);
           card.addEventListener("mouseleave", handleMouseLeave);
 
-          // cleanup
-          return () => {
-            card.removeEventListener("mouseenter", handleMouseEnter);
-            card.removeEventListener("mouseleave", handleMouseLeave);
-          };
+          // store listeners for cleanup
+          listeners.push({
+            card,
+            enter: handleMouseEnter,
+            leave: handleMouseLeave,
+          });
         });
       }, containerRef);
     };
@@ -119,6 +121,10 @@ const Skills = () => {
 
     return () => {
       ctx && ctx.revert();
+      listeners.forEach(({ card, enter, leave }) => {
+        card.removeEventListener("mouseenter", enter);
+        card.removeEventListener("mouseleave", leave);
+      });
     };
   }, []);
 

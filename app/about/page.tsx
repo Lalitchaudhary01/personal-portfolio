@@ -94,7 +94,7 @@ export default function AboutPage() {
 
   // GSAP lazy load for SSR safety
   useEffect(() => {
-    let ctx: any;
+    let ctx: gsap.Context | null = null;
     (async () => {
       try {
         const gsap = (await import("gsap")).default;
@@ -136,7 +136,9 @@ export default function AboutPage() {
         console.warn("GSAP failed to load:", e);
       }
     })();
-    return () => ctx && ctx.revert();
+    return () => {
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   return (

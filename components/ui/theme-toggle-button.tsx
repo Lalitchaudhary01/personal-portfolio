@@ -3,14 +3,14 @@
 import React from "react";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button";
-
 import {
   AnimationStart,
   AnimationVariant,
   createAnimation,
 } from "./theme-animations";
+
+// Removed custom type extension for startViewTransition to avoid type conflicts.
 
 interface ThemeToggleAnimationProps {
   variant?: AnimationVariant;
@@ -34,9 +34,6 @@ export default function ThemeToggleButton({
 
     let styleElement = document.getElementById(styleId) as HTMLStyleElement;
 
-    console.log("style ELement", styleElement);
-    console.log("name", name);
-
     if (!styleElement) {
       styleElement = document.createElement("style");
       styleElement.id = styleId;
@@ -44,13 +41,10 @@ export default function ThemeToggleButton({
     }
 
     styleElement.textContent = css;
-
-    console.log("content updated");
   }, []);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   const toggleTheme = React.useCallback(() => {
     const animation = createAnimation(variant, start, url);
-
     updateStyles(animation.css, animation.name);
 
     if (typeof window === "undefined") return;
@@ -65,7 +59,7 @@ export default function ThemeToggleButton({
     }
 
     document.startViewTransition(switchTheme);
-  }, [theme, setTheme]);
+  }, [theme, setTheme, variant, start, url, updateStyles]);
 
   return (
     <Button
@@ -81,11 +75,9 @@ export default function ThemeToggleButton({
       {showLabel && (
         <>
           <span className="hidden group-hover:block border rounded-full px-2 absolute -top-10">
-            {" "}
             variant = {variant}
           </span>
           <span className="hidden group-hover:block border rounded-full px-2 absolute -bottom-10">
-            {" "}
             start = {start}
           </span>
         </>
