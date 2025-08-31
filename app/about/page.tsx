@@ -163,8 +163,8 @@ export default function AboutPage() {
           <p className="text-muted-foreground text-lg leading-relaxed">
             I’m <span className="font-semibold">Lalit</span> — a full‑stack
             developer focused on building modern, scalable and delightful
-            products with <span className="font-medium">Next.js</span> &
-            friends. I also design and ship{" "}
+            products with <span className="font-medium">Next.js</span> & Modern
+            technologies. I also design and ship{" "}
             <span className="font-medium">Generative AI</span> experiences:
             chatbots, assistants, RAG, and workflow automations.
           </p>
