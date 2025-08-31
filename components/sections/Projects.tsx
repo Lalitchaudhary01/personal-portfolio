@@ -6,7 +6,6 @@ import { Card } from "../ui/card";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import {
-  ArrowRight,
   Check,
   ExternalLink,
   Github,
