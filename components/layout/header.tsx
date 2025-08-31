@@ -22,10 +22,10 @@ const Header = () => {
 
   const menuItems = [
     { label: "About", href: "/about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Project", href: "#projects" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
+    { label: "Skills", href: "/skills" },
+    { label: "Project", href: "/projects" },
+    { label: "Testimonials", href: "/testimonials" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
