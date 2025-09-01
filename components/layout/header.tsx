@@ -36,7 +36,7 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-screen-xl mx-auto px-4">
+      <div className="w-full px-4 md:max-w-screen-xl md:mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-lg sm:text-xl font-bold text-primary">
@@ -65,7 +65,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden ml-auto" // 🔑 force right align
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
