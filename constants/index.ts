@@ -131,6 +131,76 @@ export const testimonials = [
 
 export const projects = [
   {
+  title: "OpenTreatment - Healthcare Platform",
+  description:
+    "Building a scalable healthcare platform aimed at connecting patients with medical services, providing seamless access to treatments and healthcare solutions.",
+  image: "/images/health.png",
+  technologies: [
+    "Next.js",
+    "ReactJS",
+    "Tailwind CSS",
+    "Node.js",
+    "postgreSQL",
+    "Server actions"
+  ],
+  liveUrl: "https://www.opentreatment.in/",
+  githubUrl: "https://github.com/Lalitchaudhary01/Opentreatments",
+  features: [
+    "Healthcare service discovery",
+    "User-friendly interface for patients",
+    "Scalable architecture for future growth",
+    "Fast performance with Next.js",
+    "Modern UI/UX design"
+  ],
+},
+  {
+  title: "Vibe - Real-Time Code Editor",
+  description:
+    "Developed a real-time collaborative code editor that allows multiple users to write and edit code simultaneously with live updates.",
+  image: "/images/vibecode.png",
+  technologies: [
+    "ReactJS",
+    "Node.js",
+    "Express.js",
+    "Socket.io",
+    "CodeMirror",
+    "Tailwind CSS"
+  ],
+  liveUrl: "https://vibe-code-editor-eight.vercel.app/",
+  githubUrl: "https://github.com/Lalitchaudhary01/Vibe-code-editor",
+  features: [
+    "Real-time collaborative coding",
+    "Live code synchronization",
+    "Multiple user support",
+    "Code editor with syntax highlighting",
+    "Room-based session system"
+  ],
+},
+
+{
+  title: "Pick4U - Smart Product Discovery Platform",
+  description:
+    "Built an intelligent product discovery platform that helps users find and compare products efficiently with a clean and user-friendly interface.",
+  image: "/images/pick4u.png",
+  technologies: [
+    "ReactJS",
+    "Tailwind CSS",
+    "JavaScript",
+    "API Integration",
+    "Responsive Design"
+  ],
+  liveUrl: "https://pick4u.vercel.app/",
+  githubUrl: "https://github.com/Lalitchaudhary01/pick4u", 
+  features: [
+    "Smart product search and recommendations",
+    "Clean and intuitive UI",
+    "Fast and responsive performance",
+    "Category-based browsing",
+    "Mobile-friendly design"
+  ],
+},
+  
+  {
     title: "HireSpher - Job Portal",
     description:
       "Developed a modern job portal application designed to connect job seekers with recruiters seamlessly, featuring advanced search and management functionalities.",
