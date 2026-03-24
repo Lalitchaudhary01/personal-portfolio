@@ -1,10 +1,6 @@
 import { Octokit } from "octokit";
 import { NextResponse, NextRequest } from "next/server";
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
-
 // TypeScript interface for the GraphQL response
 interface ContributionDay {
   contributionCount: number;
@@ -31,6 +27,7 @@ interface GithubResponse {
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const username = searchParams.get("username");
+  const token = process.env.GITHUB_TOKEN;
 
   if (!username) {
     return NextResponse.json(
@@ -39,7 +36,21 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  if (!token) {
+    return NextResponse.json(
+      {
+        error:
+          "GitHub token missing. Add GITHUB_TOKEN to .env.local to load activity.",
+      },
+      { status: 503 }
+    );
+  }
+
   try {
+    const octokit = new Octokit({
+      auth: token,
+    });
+
     const query = `
       query($username: String!) {
         user(login: $username) {
@@ -79,9 +90,23 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error("GITHUB API ERROR", error);
+
+    const message =
+      error instanceof Error
+        ? error.message
+        : "Failed to fetch github Data";
+
+    const isRateLimited =
+      message.toLowerCase().includes("quota") ||
+      message.toLowerCase().includes("rate limit");
+
     return NextResponse.json(
-      { error: "Failed to fetch github Data" },
-      { status: 500 }
+      {
+        error: isRateLimited
+          ? "GitHub API rate limit exhausted. Try again later or use a fresh GITHUB_TOKEN."
+          : "Failed to fetch github data.",
+      },
+      { status: isRateLimited ? 429 : 500 }
     );
   }
 }
