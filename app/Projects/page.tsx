@@ -1,11 +1,5 @@
-import React from "react";
+import ProjectsSection from "@/components/sections/Projects";
 
-const Project = () => {
-  return (
-    <div>
-      <Project />
-    </div>
-  );
-};
-
-export default Project;
+export default function ProjectsPage() {
+  return <ProjectsSection />;
+}

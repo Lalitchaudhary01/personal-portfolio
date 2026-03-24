@@ -3,12 +3,27 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: [
-      "cdn.jsdelivr.net",
-      "avatars.githubusercontent.com",
-      "assets.vercel.com",
-      "images.unsplash.com",
-      "avatar.iran.liara.run",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.vercel.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "avatar.iran.liara.run",
+      },
     ],
   },
   eslint: {
@@ -16,6 +31,15 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true, // TS errors ignore karega
+  },
+  async redirects() {
+    return [
+      {
+        source: "/testinomials",
+        destination: "/testimonials",
+        permanent: false,
+      },
+    ];
   },
 };
 
